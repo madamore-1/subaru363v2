@@ -1,0 +1,52 @@
+@use '../sass/abstracts/vars';
+@use '../sass/abstracts/mixins';
+
+
+.colorpicker{
+    //background-color: limegreen;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    
+    .large_image{
+        width: 100%;
+        height: auto;
+        @include mixins.breakpoint(laptop) {
+            height: 700px;
+            padding: 0;
+        }
+    }
+    .large_image_relative_parent{
+        position: relative;
+        height: 0;
+        padding-bottom: calc((607/1150)*100%);
+        //background-color: pink;
+        @include mixins.breakpoint(laptop) {
+            padding-bottom: calc(52*700)/100;
+        }
+       
+    }
+    .large_image_wrapper{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        //background-color: red;
+    }
+}
+
+.swatch{
+    width: 3rem;
+    height: 3rem;
+    transition: all .5s;
+    &.active{ 
+        border: 2px solid vars.$color_blue;}
+}
+
+.swatches{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}

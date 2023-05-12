@@ -1,0 +1,19 @@
+@use '../sass/abstracts/mixins';
+.btnui{
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0;
+    border-color: black, 2px;
+    &.icon-close {
+         position: absolute;
+         top: 1rem;
+         right: 1rem;
+    }
+    &.icon-menu{
+        @include mixins.breakpoint(laptop){
+            display: none;
+        }
+
+    }
+}
